@@ -52,6 +52,15 @@ const projects = [
     tech: ["C#", "WinForms", "SQL Server"],
     codeUrl: "https://github.com/Tinoco06/ReservasFINCASA",
   },
+  {
+    title: "Árbol de Misericordia",
+    description: {
+      es: "Sitio web para una organización hondureña dedicada al bien comunitario. Abarca iniciativas de reforestación, infraestructura, salud y cuidado del medioambiente.",
+      en: "Website for a Honduran organization dedicated to community welfare. Covers reforestation, infrastructure, health, and environmental care initiatives."
+    },
+    tech: ["React", "JavaScript", "CSS", "Vite"],
+    demoUrl: "https://arboldemisericordia.org",
+  },
 ];
 
 const fadeUp = {
@@ -144,14 +153,16 @@ export default function Projects({ language }) {
                   {t.liveDemo}
                 </a>
               )}
-              <a
-                href={project.codeUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white/60 text-sm px-4 py-2 hover:text-white transition-colors"
-              >
-                {t.viewCode} →
-              </a>
+              {project.codeUrl && (
+                <a
+                  href={project.codeUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white/60 text-sm px-4 py-2 hover:text-white transition-colors"
+                >
+                  {t.viewCode} →
+                </a>
+              )}
             </div>
           </motion.div>
         ))}
